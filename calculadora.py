@@ -3,6 +3,7 @@
 # LIST | TUPLE | DICT | SET
 def calculadora(operacion:str, *parametros:tuple[int,...] ) -> int:
     resultado = 0
+
     if operacion == 'SUMA':
         # resultado = sum(parametros)
         for numero in parametros:
@@ -10,6 +11,8 @@ def calculadora(operacion:str, *parametros:tuple[int,...] ) -> int:
 
     elif operacion == 'RESTA':
         resultado = parametros[0]
+        if len(parametros) == 1:
+            return resultado
         for numero in parametros[1:]:
             resultado -= numero
 
